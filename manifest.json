@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "摸鱼小说栏",
+  "version": "1.0",
+  "description": "让你的导航栏变成自动轮播小说，摸鱼更简单！",
+  "icons": {
+    "128": "icon.png"
+  },
+  "permissions": ["storage", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "options_page": "options.html",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  }
+} 
